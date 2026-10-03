@@ -223,7 +223,7 @@
                         <property name="can-focus">False</property>
                         <property name="margin-start">12</property>
                         <property name="margin-bottom">6</property>
-                        <property name="label" translatable="yes" context="startcenter|create_label">Create:</property>
+                        <property name="label" translatable="yes" context="startcenter|create_label">New</property>
                         <property name="xalign">0</property>
                       </object>
                       <packing>
@@ -234,7 +234,7 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="writer_all">
-                        <property name="label" translatable="yes" context="startcenter|writer_all">_Writer Document</property>
+                        <property name="label" translatable="yes" context="startcenter|writer_all">Blank _Document</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -254,7 +254,7 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="calc_all">
-                        <property name="label" translatable="yes" context="startcenter|calc_all">_Calc Spreadsheet</property>
+                        <property name="label" translatable="yes" context="startcenter|calc_all">Blank _Workbook</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -274,7 +274,7 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="impress_all">
-                        <property name="label" translatable="yes" context="startcenter|impress_all">_Impress Presentation</property>
+                        <property name="label" translatable="yes" context="startcenter|impress_all">Blank _Presentation</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -294,7 +294,7 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="draw_all">
-                        <property name="label" translatable="yes" context="startcenter|draw_all">_Draw Drawing</property>
+                        <property name="label" translatable="yes" context="startcenter|draw_all">_Drawing</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -314,7 +314,7 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="math_all">
-                        <property name="label" translatable="yes" context="startcenter|math_all">_Math Formula</property>
+                        <property name="label" translatable="yes" context="startcenter|math_all">_Formula</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -334,7 +334,7 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="database_all">
-                        <property name="label" translatable="yes" context="startcenter|database_all">_Base Database</property>
+                        <property name="label" translatable="yes" context="startcenter|database_all">Data_base</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>

@@ -1,0 +1,27 @@
+msgctxt "startcenter|writer_all"
+msgid "Blank _Document"
+msgstr "_Dokumen Kosong"
+
+msgctxt "startcenter|calc_all"
+msgid "Blank _Workbook"
+msgstr "_Buku Kerja Kosong"
+
+msgctxt "startcenter|impress_all"
+msgid "Blank _Presentation"
+msgstr "_Presentasi Kosong"
+
+msgctxt "startcenter|draw_all"
+msgid "_Drawing"
+msgstr "_Gambar"
+
+msgctxt "startcenter|math_all"
+msgid "_Formula"
+msgstr "_Rumus"
+
+msgctxt "startcenter|database_all"
+msgid "Data_base"
+msgstr "Basis Da_ta"
+
+msgctxt "startcenter|create_label"
+msgid "New"
+msgstr "Baru"

@@ -3124,14 +3124,14 @@
           <info>
             <desc>Specifies the background color of the thumbnail area in the start center.</desc>
           </info>
-          <value>6710886</value>
+          <value>15987699</value>
         </prop>
         <prop oor:name="StartCenterThumbnailsTextColor" oor:type="xs:int" oor:nillable="false">
           <!-- Default 15658734 = 0xeeeeee as specified in tdf#90452, comment 45 -->
           <info>
             <desc>Specifies the text color of the thumbnail area in the start center.</desc>
           </info>
-          <value>15658734</value>
+          <value>2368548</value>
         </prop>
       </group>
     </group>

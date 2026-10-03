@@ -18,6 +18,7 @@
 #include <vcl/notebookbar/notebookbar.hxx>
 #include <vcl/notebookbar/NotebookBarAddonsItem.hxx>
 #include <vcl/syswin.hxx>
+#include <vcl/tabctrl.hxx>
 #include <vcl/taskpanelist.hxx>
 #include <vcl/themecolors.hxx>
 #include <vcl/NotebookbarContextControl.hxx>
@@ -295,20 +296,23 @@ void NotebookBar::StateChanged(const  StateChangedType nStateChange )
 
 void NotebookBar::UpdateBackground()
 {
-    Color aColor = GetSettings().GetStyleSettings().GetDialogColor();
-    // macOS excluded since AquaGraphicsBackendBase::performDrawNativeControl() case ControlType::TabPane
-    // draws the whole Notebookbar and does not allow to just color the background
+    // Arunika: flat ribbon like Microsoft Office 365 - white (or dark grey in dark mode) with the
+    // application colour only on the active tab: Word blue, Excel green, PowerPoint orange
+    const Color aDialog = GetSettings().GetStyleSettings().GetDialogColor();
+    const bool bDark = aDialog.IsDark();
+    Color aColor = bDark ? Color(0x29, 0x29, 0x29) : Color(0xff, 0xff, 0xff);
 
-    const sal_uInt8 cTrans = officecfg::Office::Common::Misc::NotebookbarColorTransparency::get();
-
-    if (m_sModule == "com.sun.star.text.TextDocument")
-        aColor.Merge(Color(0x1a, 0x85, 0xd1), cTrans); // #1a85d1
-    else if (m_sModule == "com.sun.star.sheet.SpreadsheetDocument")
-        aColor.Merge(Color(0x3c, 0xbc, 0x45), cTrans); // #3cbc45
+    Color aAccent(0x18, 0x5a, 0xbd);                                       // Word #185abd
+    if (m_sModule == "com.sun.star.sheet.SpreadsheetDocument")
+        aAccent = Color(0x10, 0x7c, 0x41);                                 // Excel #107c41
     else if (m_sModule == "com.sun.star.presentation.PresentationDocument")
-        aColor.Merge(Color(0xe7, 0x57, 0x29), cTrans); // #e75729
+        aAccent = Color(0xc4, 0x3e, 0x1c);                                 // PowerPoint #c43e1c
     else if (m_sModule == "com.sun.star.drawing.DrawingDocument")
-        aColor.Merge(Color(0xe5, 0xb4, 0x43), cTrans); // #e5b443
+        aAccent = Color(0x39, 0x55, 0xa3);                                 // Visio #3955a3
+
+    for (NotebookbarContextControl* pControl : m_pContextContainers)
+        if (auto pTabControl = dynamic_cast<NotebookbarTabControlBase*>(pControl))
+            pTabControl->SetOfficeStyle(aAccent, aColor);
 
     SetBackground(Wallpaper(aColor));
     UpdateDefaultSettings();
@@ -331,6 +335,10 @@ void NotebookBar::UpdateDefaultSettings()
     aStyleSet.SetWindowTextColor( aTextColor );
     aStyleSet.SetTabTextColor(aTextColor);
     aStyleSet.SetToolTextColor(aTextColor);
+    // Arunika: group captions under the ribbon groups are grey, as in Office
+    ::Color aCaption(aTextColor);
+    aCaption.Merge(GetBackground().GetColor(), 150);
+    aStyleSet.SetLabelTextColor(aCaption);
 
     aAllSettings.SetStyleSettings(aStyleSet);
     DefaultSettings = std::move(aAllSettings);

@@ -75,7 +75,7 @@
           <value>scalc</value>
         </prop>
         <prop oor:name="ooSetupFactoryUIName">
-          <value>Calc</value>
+          <value>Arunika Lembar Kerja</value>
         </prop>
         <prop oor:name="ooSetupFactoryWindowStateConfigRef">
           <value>CalcWindowState</value>
@@ -119,7 +119,7 @@
           <value>sdraw</value>
         </prop>
         <prop oor:name="ooSetupFactoryUIName">
-          <value>Draw</value>
+          <value>Arunika Gambar</value>
         </prop>
         <prop oor:name="ooSetupFactoryWindowStateConfigRef">
           <value>DrawWindowState</value>
@@ -163,7 +163,7 @@
           <value>simpress</value>
         </prop>
         <prop oor:name="ooSetupFactoryUIName">
-          <value>Impress</value>
+          <value>Arunika Presentasi</value>
         </prop>
         <prop oor:name="ooSetupFactoryWindowStateConfigRef">
           <value>ImpressWindowState</value>
@@ -205,7 +205,7 @@
           <value>smath</value>
         </prop>
         <prop oor:name="ooSetupFactoryUIName">
-          <value>Math</value>
+          <value>Arunika Rumus</value>
         </prop>
         <prop oor:name="ooSetupFactoryWindowStateConfigRef">
           <value>MathWindowState</value>
@@ -249,7 +249,7 @@
           <value>sglobal</value>
         </prop>
         <prop oor:name="ooSetupFactoryUIName">
-          <value>Writer</value>
+          <value>Arunika Dokumen Induk</value>
         </prop>
         <prop oor:name="ooSetupFactoryWindowStateConfigRef">
           <value>WriterGlobalWindowState</value>
@@ -293,7 +293,7 @@
           <value>swriter</value>
         </prop>
         <prop oor:name="ooSetupFactoryUIName">
-          <value>Writer</value>
+          <value>Arunika Dokumen</value>
         </prop>
         <prop oor:name="ooSetupFactoryWindowStateConfigRef">
           <value>WriterWindowState</value>
@@ -446,7 +446,7 @@
           <value>sweb</value>
         </prop>
         <prop oor:name="ooSetupFactoryUIName">
-          <value>Writer/Web</value>
+          <value>Arunika Web</value>
         </prop>
         <prop oor:name="ooSetupFactoryWindowStateConfigRef">
           <value>WriterWebWindowState</value>
@@ -749,7 +749,7 @@
           <value>GenericCategories</value>
         </prop>
         <prop oor:name="ooSetupFactoryUIName">
-          <value>Base</value>
+          <value>Arunika Basis Data</value>
         </prop>
       </node>
       <node oor:name="com.sun.star.report.ReportDefinition" oor:op="replace" install:module="reportbuilder">

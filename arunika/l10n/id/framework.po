@@ -1,0 +1,15 @@
+msgctxt "STR_UNTITLED_TEXT"
+msgid "Document"
+msgstr "Dokumen"
+
+msgctxt "STR_UNTITLED_SPREADSHEET"
+msgid "Book"
+msgstr "Buku"
+
+msgctxt "STR_UNTITLED_PRESENTATION"
+msgid "Presentation"
+msgstr "Presentasi"
+
+msgctxt "STR_UNTITLED_DRAWING"
+msgid "Drawing"
+msgstr "Gambar"

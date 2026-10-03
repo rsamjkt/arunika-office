@@ -27,6 +27,7 @@
 #include <com/sun/star/frame/ModuleManager.hpp>
 #include <com/sun/star/frame/XUntitledNumbers.hpp>
 #include <com/sun/star/frame/XModel3.hpp>
+#include <com/sun/star/lang/XServiceInfo.hpp>
 #include <com/sun/star/document/XDocumentEventBroadcaster.hpp>
 
 #include <comphelper/configuration.hxx>
@@ -370,10 +371,24 @@ void TitleHelper::impl_updateTitleForModel (const css::uno::Reference< css::fram
         if (nLeasedNumber == css::frame::UntitledNumbersConst::INVALID_NUMBER)
             nLeasedNumber = xNumbers->leaseNumber (xOwner);
 
+        // Arunika: "Document1", "Book1", "Presentation1" like Microsoft Office
+        OUString sPrefix = xNumbers->getUntitledPrefix();
+        css::uno::Reference<css::lang::XServiceInfo> xInfo(xModel, css::uno::UNO_QUERY);
+        if (xInfo.is())
+        {
+            if (xInfo->supportsService(u"com.sun.star.text.TextDocument"_ustr))
+                sPrefix = FwkResId(STR_UNTITLED_TEXT);
+            else if (xInfo->supportsService(u"com.sun.star.sheet.SpreadsheetDocument"_ustr))
+                sPrefix = FwkResId(STR_UNTITLED_SPREADSHEET);
+            else if (xInfo->supportsService(u"com.sun.star.presentation.PresentationDocument"_ustr))
+                sPrefix = FwkResId(STR_UNTITLED_PRESENTATION);
+            else if (xInfo->supportsService(u"com.sun.star.drawing.DrawingDocument"_ustr))
+                sPrefix = FwkResId(STR_UNTITLED_DRAWING);
+        }
         if (nLeasedNumber != css::frame::UntitledNumbersConst::INVALID_NUMBER)
-            sTitle = xNumbers->getUntitledPrefix() + OUString::number(nLeasedNumber);
+            sTitle = sPrefix + OUString::number(nLeasedNumber);
         else
-            sTitle = xNumbers->getUntitledPrefix() + "?";
+            sTitle = sPrefix + "?";
     }
 
     bool     bChanged;
@@ -502,8 +517,12 @@ void TitleHelper::impl_updateTitleForFrame (const css::uno::Reference< css::fram
     {
         // fdo#70376: We want the window title to contain just the
         // document name (from the above "component title").
-        impl_appendProductName      (sTitle);
+        // Arunika: "Document1 - Arunika Dokumen", like "Document1 - Word"; the module UI name
+        // already carries the brand, the product name is only used when there is none
+        const sal_Int32 nBefore = sTitle.getLength();
         impl_appendModuleName       (sTitle);
+        if (sTitle.getLength() == nBefore)
+            impl_appendProductName  (sTitle);
         impl_appendDebugVersion     (sTitle);
     }
 #endif
@@ -576,7 +595,8 @@ void TitleHelper::impl_appendModuleName (OUStringBuffer& sTitle)
         // So please add it to the title in case it does really exists only.
         if (!sUIName.isEmpty())
         {
-            sTitle.append (" "    );
+            if (!sTitle.isEmpty())
+                sTitle.append (" - ");
             sTitle.append      (sUIName);
         }
     }

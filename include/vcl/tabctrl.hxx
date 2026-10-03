@@ -54,6 +54,10 @@ protected:
     bool                mbLayoutDirty;
     Link<TabControl*,void> maActivateHdl;
     Link<TabControl*,bool> maDeactivateHdl;
+    // Arunika: Microsoft Office style tabs (flat, accent underline) when set
+    bool                mbOfficeStyle = false;
+    Color               maOfficeAccent;
+    Color               maOfficeBack;
 
     using Control::ImplInitSettings;
     SAL_DLLPRIVATE void         ImplInitSettings( bool bBackground );
@@ -69,6 +73,8 @@ protected:
     SAL_DLLPRIVATE void         ImplDrawItem(vcl::RenderContext& rRenderContext, ImplTabItem const * pItem,
                                              const tools::Rectangle& rCurRect, bool bFirstInGroup,
                                              bool bLastInGroup);
+    SAL_DLLPRIVATE void         ImplDrawOfficeItem(vcl::RenderContext& rRenderContext, ImplTabItem const * pItem);
+    SAL_DLLPRIVATE void         ImplPaintOffice(vcl::RenderContext& rRenderContext);
     SAL_DLLPRIVATE bool         ImplHandleKeyEvent( const KeyEvent& rKeyEvent );
 
     DECL_DLLPRIVATE_LINK( ImplListBoxSelectHdl, ListBox&, void );
@@ -186,6 +192,8 @@ public:
     void SetToolBox( ToolBox* pToolBox );
     ToolBox* GetToolBox() { return m_pShortcuts; }
     Control* GetOpenMenu();
+    /// Arunika: draw the tabs like the Microsoft Office ribbon, using rAccent for the active tab
+    void SetOfficeStyle(const Color& rAccent, const Color& rBack);
 
     virtual Size        calculateRequisition() const override;
 

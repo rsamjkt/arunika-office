@@ -995,6 +995,115 @@ void TabControl::ImplDrawItem(vcl::RenderContext& rRenderContext, ImplTabItem co
     }
 }
 
+namespace
+{
+// Arunika: colours of the Microsoft Office ribbon, derived from the background so dark mode works
+Color lcl_OfficeShade(const Color& rBack, sal_uInt8 nAmount)
+{
+    Color aColor(rBack);
+    if (rBack.IsDark())
+        aColor.IncreaseLuminance(nAmount);
+    else
+        aColor.DecreaseLuminance(nAmount);
+    return aColor;
+}
+
+Color lcl_OfficeAccentText(const Color& rAccent, const Color& rBack)
+{
+    if (!rBack.IsDark())
+        return rAccent;
+    Color aColor(rAccent);
+    aColor.Merge(COL_WHITE, 110); // lighter accent on dark backgrounds
+    return aColor;
+}
+}
+
+void TabControl::ImplDrawOfficeItem(vcl::RenderContext& rRenderContext, ImplTabItem const * pItem)
+{
+    if (!pItem->m_bVisible || pItem->maRect.IsEmpty())
+        return;
+
+    const tools::Rectangle& rRect = pItem->maRect;
+    const bool bSelected = pItem->id() == mnCurPageId;
+    bool bRollover = IsMouseOver() && rRect.Contains(GetPointerPosPixel());
+    if (bRollover)
+        for (auto const& item : mpTabCtrlData->maItemList)
+            if (&item != pItem && item.m_bVisible && item.maRect.Contains(GetPointerPosPixel()))
+                bRollover = false;
+    // contextual tabs (Table, Picture Format, ...) are written in the accent colour, like Office
+    const bool bContextual = pItem->mpTabPage
+                             && !pItem->mpTabPage->HasContext(vcl::EnumContext::Context::Any);
+
+    rRenderContext.Push(vcl::PushFlags::FILLCOLOR | vcl::PushFlags::LINECOLOR | vcl::PushFlags::FONT
+                        | vcl::PushFlags::TEXTCOLOR);
+    if (bRollover && !bSelected)
+    {
+        rRenderContext.SetLineColor();
+        rRenderContext.SetFillColor(lcl_OfficeShade(maOfficeBack, 14));
+        tools::Rectangle aHover(rRect);
+        aHover.AdjustTop(3);
+        aHover.AdjustBottom(-3);
+        rRenderContext.DrawRect(aHover, 4, 4);
+    }
+
+    vcl::Font aFont(rRenderContext.GetFont());
+    aFont.SetTransparent(true);
+    if (bSelected)
+        aFont.SetWeight(WEIGHT_SEMIBOLD);
+    rRenderContext.SetFont(aFont);
+
+    const tools::Long nTextWidth = rRenderContext.GetCtrlTextWidth(pItem->maFormatText);
+    const tools::Long nTextHeight = rRenderContext.GetTextHeight();
+    const tools::Long nX = rRect.Left() + (rRect.GetWidth() - nTextWidth) / 2;
+    const tools::Long nY = rRect.Top() + (rRect.GetHeight() - nTextHeight) / 2 - 1;
+
+    const StyleSettings& rStyleSettings = rRenderContext.GetSettings().GetStyleSettings();
+    Color aText(rStyleSettings.GetTabTextColor());
+    if (bSelected || bContextual)
+        aText = lcl_OfficeAccentText(maOfficeAccent, maOfficeBack);
+    rRenderContext.SetTextColor(aText);
+
+    DrawTextFlags nStyle = DrawTextFlags::Mnemonic;
+    if (!pItem->m_bEnabled)
+        nStyle |= DrawTextFlags::Disable;
+    DrawControlText(rRenderContext, tools::Rectangle(nX, nY, nX + nTextWidth, nY + nTextHeight),
+                    pItem->maFormatText, nStyle, nullptr, nullptr);
+
+    if (bSelected)
+    {
+        // the coloured bar under the active tab
+        const tools::Long nBar = std::max<tools::Long>(3, nTextHeight / 6);
+        tools::Rectangle aBar(nX + 2, rRect.Bottom() - nBar - 1, nX + nTextWidth - 2, rRect.Bottom() - 1);
+        rRenderContext.SetLineColor();
+        rRenderContext.SetFillColor(lcl_OfficeAccentText(maOfficeAccent, maOfficeBack));
+        rRenderContext.DrawRect(aBar, nBar / 2, nBar / 2);
+    }
+    rRenderContext.Pop();
+}
+
+void TabControl::ImplPaintOffice(vcl::RenderContext& rRenderContext)
+{
+    // make sure the tabs are laid out
+    (void)ImplGetTabRect(TAB_PAGERECT);
+
+    const Size aSize(GetOutputSizePixel());
+    rRenderContext.Push(vcl::PushFlags::FILLCOLOR | vcl::PushFlags::LINECOLOR);
+    rRenderContext.SetLineColor();
+    rRenderContext.SetFillColor(maOfficeBack);
+    rRenderContext.DrawRect(tools::Rectangle(Point(0, 0), aSize));
+    // hairline between the ribbon and the document, as in Office
+    rRenderContext.SetLineColor(lcl_OfficeShade(maOfficeBack, 26));
+    rRenderContext.DrawLine(Point(0, aSize.Height() - 1), Point(aSize.Width(), aSize.Height() - 1));
+    rRenderContext.Pop();
+
+    if (mbShowTabs)
+        for (auto const& item : mpTabCtrlData->maItemList)
+            ImplDrawOfficeItem(rRenderContext, &item);
+
+    if (HasFocus())
+        ImplShowFocus();
+}
+
 bool TabControl::ImplHandleKeyEvent( const KeyEvent& rKeyEvent )
 {
     bool bRet = false;
@@ -1093,6 +1202,12 @@ void TabControl::Paint( vcl::RenderContext& rRenderContext, const tools::Rectang
     Control::Paint(rRenderContext, rRect);
 
     HideFocus();
+
+    if (mbOfficeStyle)
+    {
+        ImplPaintOffice(rRenderContext);
+        return;
+    }
 
     // reformat if needed
     tools::Rectangle aRect = ImplGetTabRect(TAB_PAGERECT);
@@ -2162,6 +2277,9 @@ FactoryFunction TabControl::GetUITestFactory() const
 
 sal_uInt16 NotebookbarTabControlBase::m_nHeaderHeight = 0;
 
+// Arunika: horizontal padding of an Office style ribbon tab
+constexpr tools::Long OFFICE_TAB_PADDING = 12;
+
 IMPL_LINK_NOARG(NotebookbarTabControlBase, OpenMenu, Button*, void)
 {
     m_aIconClickHdl.Call(static_cast<NotebookBar*>(GetParent()->GetParent()));
@@ -2242,6 +2360,17 @@ void NotebookbarTabControlBase::dispose()
     TabControl::dispose();
 }
 
+void NotebookbarTabControlBase::SetOfficeStyle(const Color& rAccent, const Color& rBack)
+{
+    if (mbOfficeStyle && maOfficeAccent == rAccent && maOfficeBack == rBack)
+        return;
+    mbOfficeStyle = true;
+    maOfficeAccent = rAccent;
+    maOfficeBack = rBack;
+    mbFormat = true;
+    Invalidate();
+}
+
 void NotebookbarTabControlBase::SetToolBox( ToolBox* pToolBox )
 {
     m_pShortcuts.reset( pToolBox );
@@ -2309,7 +2438,9 @@ bool NotebookbarTabControlBase::ImplPlaceTabs( tools::Long nWidth )
         if (item.m_bVisible)
         {
             nTabWidth = ImplGetItemSize(&item, nMaxWidth).getWidth();
-            if (!item.maText.isEmpty() && nTabWidth < 100)
+            if (mbOfficeStyle)
+                nTabWidth = GetOutDev()->GetCtrlTextWidth(item.maFormatText) + 2 * OFFICE_TAB_PADDING;
+            else if (!item.maText.isEmpty() && nTabWidth < 100)
                 nTabWidth = 100;
         }
         nFullWidth += nTabWidth;
@@ -2328,12 +2459,21 @@ bool NotebookbarTabControlBase::ImplPlaceTabs( tools::Long nWidth )
 
         Size aSize = ImplGetItemSize( &item, nMaxWidth );
 
-        // set minimum tab size
-        if( nFullWidth < nMaxWidth && !item.maText.isEmpty() && aSize.getWidth() < 100)
-            aSize.setWidth( 100 );
+        if (mbOfficeStyle)
+        {
+            // compact tabs sized to their caption, like the Office ribbon
+            aSize.setWidth(GetOutDev()->GetCtrlTextWidth(item.maFormatText) + 2 * OFFICE_TAB_PADDING);
+            aSize.setHeight(std::max<tools::Long>(30, GetTextHeight() + 14));
+        }
+        else
+        {
+            // set minimum tab size
+            if( nFullWidth < nMaxWidth && !item.maText.isEmpty() && aSize.getWidth() < 100)
+                aSize.setWidth( 100 );
 
-        if( !item.maText.isEmpty() && aSize.getHeight() < 28 )
-            aSize.setHeight( 28 );
+            if( !item.maText.isEmpty() && aSize.getHeight() < 28 )
+                aSize.setHeight( 28 );
+        }
 
         tools::Rectangle aNewRect( Point( nX, nY ), aSize );
         if ( mbSmallInvalidate && (item.maRect != aNewRect) )
@@ -2349,7 +2489,8 @@ bool NotebookbarTabControlBase::ImplPlaceTabs( tools::Long nWidth )
 
     // we always have only one line of tabs
     // tdf#127610 subtract width of shortcuts from width available for tab items
-    lcl_AdjustSingleLineTabs(nMaxWidth - nShortcutsWidth, mpTabCtrlData.get());
+    if (!mbOfficeStyle)
+        lcl_AdjustSingleLineTabs(nMaxWidth - nShortcutsWidth, mpTabCtrlData.get());
 
     // position the shortcutbox
     if (m_pShortcuts)

@@ -913,7 +913,7 @@
             <desc>Shows text boundaries, if enabled.</desc>
             <label>Text boundaries</label>
           </info>
-          <value>true</value>
+          <value>false</value>
         </prop>
         <prop oor:name="TextBoundariesFull" oor:type="xs:boolean" oor:nillable="false">
           <!-- UIHints:  Tools - Options - Writer - Formatting Aids -->

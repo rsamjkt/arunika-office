@@ -528,7 +528,7 @@ Color ColorConfig::GetDefaultColor(ColorConfigEntry eEntry, int nMod)
     {
         { COL_WHITE,        Color(0x1C1C1C) }, // DOCCOLOR
         { COL_LIGHTGRAY,    Color(0x808080) }, // DOCBOUNDARIES
-        { Color(0xDFDFDE),  Color(0x333333) }, // APPBACKGROUND
+        { Color(0xE6E6E6),  Color(0x1F1F1F) }, // APPBACKGROUND (Arunika: Office canvas)
         { COL_LIGHTGRAY,    Color(0x808080) }, // TABLEBOUNDARIES
         { COL_BLACK,        COL_BLACK       }, // FONTCOLOR
         { COL_BLUE,         Color(0x1D99F3) }, // LINKS
@@ -550,8 +550,8 @@ Color ColorConfig::GetDefaultColor(ColorConfigEntry eEntry, int nMod)
         { COL_LIGHTGREEN,   COL_LIGHTGREEN  }, // HTMLCOMMENT
         { COL_LIGHTRED,     COL_LIGHTRED    }, // HTMLKEYWORD
         { COL_GRAY,         COL_GRAY        }, // HTMLUNKNOWN
-        { COL_GRAY3,        COL_GRAY7       }, // CALCGRID
-        { COL_LIGHTBLUE,    COL_LIGHTBLUE   }, // CALCCELLFOCUS
+        { Color(0xE1E1E1),  Color(0x3D3D3D) }, // CALCGRID (Arunika: Excel gridlines)
+        { Color(0x107C41),  Color(0x3FA36C) }, // CALCCELLFOCUS (Arunika: Excel green)
         { COL_LIGHTGRAYBLUE, COL_LIGHTGRAYBLUE }, // CALCDBFOCUS
         { COL_BLUE,         COL_BLUE        }, // CALCPAGEBREAK
         { Color(0x2300dc),  Color(0x2300DC) }, // CALCPAGEBREAKMANUAL
@@ -596,20 +596,12 @@ Color ColorConfig::GetDefaultColor(ColorConfigEntry eEntry, int nMod)
     Color aRet;
     switch(eEntry)
     {
-        case APPBACKGROUND :
-            aRet = Application::GetSettings().GetStyleSettings().GetWorkspaceColor();
-            break;
-
         case LINKS :
             aRet = Application::GetSettings().GetStyleSettings().GetLinkColor();
             break;
 
         case LINKSVISITED :
             aRet = Application::GetSettings().GetStyleSettings().GetVisitedLinkColor();
-            break;
-
-        case CALCCELLFOCUS:
-            aRet = Application::GetSettings().GetStyleSettings().GetAccentColor();
             break;
 
         case CALCDBFOCUS:

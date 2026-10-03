@@ -335,6 +335,19 @@ void NotebookBar::UpdateDefaultSettings()
     aStyleSet.SetWindowTextColor( aTextColor );
     aStyleSet.SetTabTextColor(aTextColor);
     aStyleSet.SetToolTextColor(aTextColor);
+    // Arunika: the Office ribbon uses a 9 pt UI font (Segoe UI 9); never larger than that
+    for (auto [get, set] : { std::pair(&StyleSettings::GetAppFont, &StyleSettings::SetAppFont),
+                             std::pair(&StyleSettings::GetToolFont, &StyleSettings::SetToolFont),
+                             std::pair(&StyleSettings::GetLabelFont, &StyleSettings::SetLabelFont),
+                             std::pair(&StyleSettings::GetTabFont, &StyleSettings::SetTabFont) })
+    {
+        vcl::Font aFont((aStyleSet.*get)());
+        if (aFont.GetFontHeight() > 9)
+        {
+            aFont.SetFontHeight(9);
+            (aStyleSet.*set)(aFont);
+        }
+    }
     // Arunika: group captions under the ribbon groups are grey, as in Office
     ::Color aCaption(aTextColor);
     aCaption.Merge(GetBackground().GetColor(), 150);

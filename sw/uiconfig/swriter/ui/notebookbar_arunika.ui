@@ -3759,9 +3759,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|HomeParagraphGroup">Paragraph</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugHomeParagraph">
                         <property name="visible">True</property>
@@ -4002,6 +3999,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-7" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4028,9 +4028,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|HomeStylesGroup">Styles</property>
-                    <style>
-                      <class name="priority-3" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugHomeStyles">
                         <property name="visible">True</property>
@@ -4070,46 +4067,6 @@
                                 <property name="position">0</property>
                               </packing>
                             </child>
-                            <child>
-                              <object class="GtkBox" id="arustack6">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="orientation">vertical</property>
-                                <property name="spacing">1</property>
-                                <property name="valign">center</property>
-                                <child>
-                                  <object class="sfxlo-NotebookbarToolBox" id="arutbDesignerDialog">
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="valign">center</property>
-                                    <property name="toolbar-style">both-horiz</property>
-                                    <property name="show-arrow">False</property>
-                                    <child>
-                                      <object class="GtkToolButton" id="arubtnDesignerDialog">
-                                        <property name="visible">True</property>
-                                        <property name="can-focus">False</property>
-                                        <property name="action-name">.uno:DesignerDialog</property>
-                                        <property name="label" translatable="yes" context="ArunikaWord|btnDesignerDialog">Styles Pane</property>
-                                      </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="homogeneous">False</property>
-                                      </packing>
-                                    </child>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -4141,6 +4098,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4167,9 +4127,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|HomeEditingGroup">Editing</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugHomeEditing">
                         <property name="visible">True</property>
@@ -4184,7 +4141,7 @@
                             <property name="spacing">2</property>
                             <property name="vexpand">True</property>
                             <child>
-                              <object class="GtkBox" id="arustack7">
+                              <object class="GtkBox" id="arustack6">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -4306,6 +4263,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-2" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4348,9 +4308,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|InsertPagesGroup">Pages</property>
-                    <style>
-                      <class name="priority-8" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertPages">
                         <property name="visible">True</property>
@@ -4365,7 +4322,7 @@
                             <property name="spacing">2</property>
                             <property name="vexpand">True</property>
                             <child>
-                              <object class="GtkBox" id="arustack8">
+                              <object class="GtkBox" id="arustack7">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -4487,6 +4444,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-8" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4598,9 +4558,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|InsertIllustrationsGroup">Illustrations</property>
-                    <style>
-                      <class name="priority-9" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertIllustrations">
                         <property name="visible">True</property>
@@ -4723,7 +4680,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack9">
+                              <object class="GtkBox" id="arustack8">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -4820,6 +4777,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-9" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4846,9 +4806,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|InsertMediaGroup">Media</property>
-                    <style>
-                      <class name="priority-2" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertMedia">
                         <property name="visible">True</property>
@@ -4920,6 +4877,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-2" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4946,9 +4906,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|InsertLinksGroup">Links</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertLinks">
                         <property name="visible">True</property>
@@ -4990,7 +4947,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack10">
+                              <object class="GtkBox" id="arustack9">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -5086,6 +5043,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -5112,9 +5072,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|InsertCommentsGroup">Comments</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertComments">
                         <property name="visible">True</property>
@@ -5186,6 +5143,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -5212,9 +5172,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|InsertHeaderFooterGroup">Header &amp; Footer</property>
-                    <style>
-                      <class name="priority-7" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertHeaderFooter">
                         <property name="visible">True</property>
@@ -5340,6 +5297,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-7" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -5366,9 +5326,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|InsertTextGroup">Text</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertText">
                         <property name="visible">True</property>
@@ -5410,7 +5367,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack11">
+                              <object class="GtkBox" id="arustack10">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -5503,7 +5460,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack12">
+                              <object class="GtkBox" id="arustack11">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -5625,6 +5582,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-6" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -5651,9 +5611,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|InsertSymbolsGroup">Symbols</property>
-                    <style>
-                      <class name="priority-3" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertSymbols">
                         <property name="visible">True</property>
@@ -5752,6 +5709,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-3" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -5990,7 +5950,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="arustack13">
+                          <object class="GtkBox" id="arustack12">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="orientation">vertical</property>
@@ -6231,7 +6191,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="arustack14">
+                          <object class="GtkBox" id="arustack13">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="orientation">vertical</property>
@@ -6372,9 +6332,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|DesignPageBackgroundGroup">Page Background</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugDesignPageBackground">
                         <property name="visible">True</property>
@@ -6501,6 +6458,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -6654,7 +6614,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="arustack15">
+                          <object class="GtkBox" id="arustack14">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="orientation">vertical</property>
@@ -6795,9 +6755,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|LayoutLayoutParaGroup">Paragraph</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugLayoutLayoutPara">
                         <property name="visible">True</property>
@@ -6812,7 +6769,7 @@
                             <property name="spacing">2</property>
                             <property name="vexpand">True</property>
                             <child>
-                              <object class="GtkBox" id="arustack16">
+                              <object class="GtkBox" id="arustack15">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -6904,7 +6861,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack17">
+                              <object class="GtkBox" id="arustack16">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -7026,6 +6983,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-6" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -7052,9 +7012,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|LayoutArrangeGroup">Arrange</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugLayoutArrange">
                         <property name="visible">True</property>
@@ -7151,7 +7108,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack18">
+                              <object class="GtkBox" id="arustack17">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -7273,6 +7230,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -7345,7 +7305,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="arustack19">
+                          <object class="GtkBox" id="arustack18">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="orientation">vertical</property>
@@ -7460,9 +7420,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ReferencesFootnotesGroup">Footnotes</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReferencesFootnotes">
                         <property name="visible">True</property>
@@ -7504,7 +7461,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack20">
+                              <object class="GtkBox" id="arustack19">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -7627,6 +7584,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-6" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -7653,9 +7613,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ReferencesCitationsGroup">Citations &amp; Bibliography</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReferencesCitations">
                         <property name="visible">True</property>
@@ -7697,7 +7654,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack21">
+                              <object class="GtkBox" id="arustack20">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -7767,6 +7724,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -7793,9 +7753,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ReferencesCaptionsGroup">Captions</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReferencesCaptions">
                         <property name="visible">True</property>
@@ -7837,7 +7794,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack22">
+                              <object class="GtkBox" id="arustack21">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -7934,6 +7891,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -7960,9 +7920,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ReferencesIndexGroup">Index</property>
-                    <style>
-                      <class name="priority-3" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReferencesIndex">
                         <property name="visible">True</property>
@@ -8004,7 +7961,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack23">
+                              <object class="GtkBox" id="arustack22">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -8074,6 +8031,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-3" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -8259,7 +8219,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="arustack24">
+                          <object class="GtkBox" id="arustack23">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="orientation">vertical</property>
@@ -8374,9 +8334,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|MailingsWriteFieldsGroup">Write &amp; Insert Fields</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugMailingsWriteFields">
                         <property name="visible">True</property>
@@ -8418,7 +8375,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack25">
+                              <object class="GtkBox" id="arustack24">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -8514,6 +8471,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -8540,9 +8500,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|MailingsPreviewGroup">Preview Results</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugMailingsPreview">
                         <property name="visible">True</property>
@@ -8695,6 +8652,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -8721,9 +8681,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|MailingsFinishGroup">Finish</property>
-                    <style>
-                      <class name="priority-3" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugMailingsFinish">
                         <property name="visible">True</property>
@@ -8765,7 +8722,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack26">
+                              <object class="GtkBox" id="arustack25">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -8887,6 +8844,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-3" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -8959,7 +8919,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="arustack27">
+                          <object class="GtkBox" id="arustack26">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="orientation">vertical</property>
@@ -9100,9 +9060,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ReviewLanguageGroup">Language</property>
-                    <style>
-                      <class name="priority-3" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReviewLanguage">
                         <property name="visible">True</property>
@@ -9175,6 +9132,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-3" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -9201,9 +9161,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ReviewReviewCommentsGroup">Comments</property>
-                    <style>
-                      <class name="priority-7" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReviewReviewComments">
                         <property name="visible">True</property>
@@ -9245,7 +9202,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack28">
+                              <object class="GtkBox" id="arustack27">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -9367,6 +9324,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-7" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -9393,9 +9353,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ReviewTrackingGroup">Tracking</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReviewTracking">
                         <property name="visible">True</property>
@@ -9437,7 +9394,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack29">
+                              <object class="GtkBox" id="arustack28">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -9560,6 +9517,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-6" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -9586,9 +9546,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ReviewChangesGroup">Changes</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReviewChanges">
                         <property name="visible">True</property>
@@ -9657,7 +9614,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack30">
+                              <object class="GtkBox" id="arustack29">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -9779,6 +9736,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -9805,9 +9765,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ReviewCompareGroup">Compare</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReviewCompare">
                         <property name="visible">True</property>
@@ -9849,7 +9806,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack31">
+                              <object class="GtkBox" id="arustack30">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -9919,6 +9876,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -9945,9 +9905,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ReviewProtectGroup">Protect</property>
-                    <style>
-                      <class name="priority-2" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReviewProtect">
                         <property name="visible">True</property>
@@ -9989,7 +9946,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack32">
+                              <object class="GtkBox" id="arustack31">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -10059,6 +10016,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-2" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -10234,9 +10194,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ViewShowGroup">Show</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewShow">
                         <property name="visible">True</property>
@@ -10251,7 +10208,7 @@
                             <property name="spacing">2</property>
                             <property name="vexpand">True</property>
                             <child>
-                              <object class="GtkBox" id="arustack33">
+                              <object class="GtkBox" id="arustack32">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -10343,7 +10300,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack34">
+                              <object class="GtkBox" id="arustack33">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -10465,6 +10422,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-6" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -10491,9 +10451,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ViewZoomGroup">Zoom</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewZoom">
                         <property name="visible">True</property>
@@ -10562,7 +10519,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack35">
+                              <object class="GtkBox" id="arustack34">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -10684,6 +10641,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -10710,9 +10670,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ViewWindowGroup">Window</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewWindow">
                         <property name="visible">True</property>
@@ -10754,7 +10711,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="arustack36">
+                              <object class="GtkBox" id="arustack35">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
@@ -10825,6 +10782,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -10851,9 +10811,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaWord|ViewMacrosGroup">Macros</property>
-                    <style>
-                      <class name="priority-3" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewMacros">
                         <property name="visible">True</property>
@@ -10925,6 +10882,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-3" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -11052,7 +11012,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="arustack37">
+                          <object class="GtkBox" id="arustack36">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="orientation">vertical</property>

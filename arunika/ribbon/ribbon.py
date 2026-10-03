@@ -73,8 +73,14 @@ def I(cmd, drop=False, icon=None):  # noqa: E743
     return Item("icon", cmd, drop=drop, icon=icon)
 
 
-def W(cmd):
-    return Item("widget", cmd)
+# lebar kontrol bawaan seperti di Office (px); None = ukuran bawaan LibreOffice
+WIDGET_WIDTH = {}  # width-request memotong panah dropdown kombo; pakai ukuran bawaan
+
+
+def W(cmd, width=None):
+    it = Item("widget", cmd)
+    it.width = width or WIDGET_WIDTH.get(cmd)
+    return it
 
 
 class Stack:
@@ -187,6 +193,8 @@ class Builder:
             ich, btn = self.obj(tb, cls, self.uid("btn" + it.cmd.split(":")[-1].split("?")[0]))
             self.base(btn)
             self.prop(btn, "action-name", it.cmd)
+            if getattr(it, "width", None):
+                self.prop(btn, "width-request", str(it.width))
             if it.icon:
                 prefix = "cmd/32/" if big32 else ("cmd/lc_" if large else "cmd/sc_")
                 self.prop(btn, "icon-name", f"{prefix}{it.icon}.png")
@@ -236,8 +244,6 @@ class Builder:
             ch, dd = self.obj(parent, "sfxlo-DropdownBox", self.uid(f"dd{tab.key}{g.key}"))
             self.base(dd)
             self.tr(dd, "tooltip-text", f"{tab.key}{g.key}Group", g.en, g.id_)
-            style = ET.SubElement(dd, "style")
-            ET.SubElement(style, "class", name=f"priority-{g.priority}")
             holder = dd
         else:
             ch, holder = None, parent
@@ -259,6 +265,10 @@ class Builder:
         self.packing(lch, expand="False", fill="True", position="1")
         if ch is not None:
             self.packing(gch, expand="False", fill="True", position="0")
+            # <style> must follow the children: VclBuilder creates the widget at its first <child>
+            # and drops a priority class seen before that
+            style = ET.SubElement(holder, "style")
+            ET.SubElement(style, "class", name=f"priority-{g.priority}")
             self.packing(ch, expand="False", fill="True", position=str(pos * 2))
         else:
             self.packing(gch, expand="False", fill="True", position=str(pos * 2))

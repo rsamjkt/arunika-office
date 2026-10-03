@@ -35,27 +35,27 @@ def save(doc, name, filt):
 d = open_tpl("Normal.ott"); t = d.Text; c = t.createTextCursor()
 def para(text, style):
     c.ParaStyleName = style; t.insertString(c, text, False); t.insertControlCharacter(c, 0, False)
-para("Laporan Kegiatan Triwulan III 2026", "Title")
-para("RS Harapan Mulia · Unit Pelayanan Rawat Jalan", "Subtitle")
+para("Laporan Penjualan Triwulan III", "Title")
+para("Tim Pemasaran · Oktober 2026", "Subtitle")
 para("Ringkasan", "Heading 1")
-para("Selama triwulan ketiga, jumlah kunjungan rawat jalan meningkat 12% dibanding triwulan sebelumnya. "
-     "Peningkatan terbesar terjadi di poliklinik anak dan poliklinik penyakit dalam, sejalan dengan "
-     "dibukanya layanan sore hari sejak bulan Juli.", "Standard")
+para("Penjualan triwulan ketiga naik 12% dibanding triwulan sebelumnya. Kenaikan terbesar "
+     "berasal dari wilayah Jawa Barat dan Jawa Timur, didorong oleh penjualan daring.", "Standard")
 para("Capaian Utama", "Heading 2")
-for s in ["Waktu tunggu rata-rata turun dari 48 menjadi 31 menit.",
-          "Kepuasan pasien mencapai 4,6 dari 5 berdasarkan survei elektronik.",
-          "Seluruh rekam medis kini terintegrasi dengan SATUSEHAT."]:
+for s in ["Pesanan daring tumbuh 25%.",
+          "Jumlah pelanggan baru bertambah 1.200 orang.",
+          "Biaya pengiriman rata-rata turun 8%."]:
     para("•  " + s, "Standard")
 para("Rencana Triwulan IV", "Heading 2")
-para("Fokus berikutnya adalah perluasan pendaftaran daring, penambahan jadwal dokter spesialis, dan "
-     "pelatihan layanan prima untuk seluruh petugas loket.", "Standard")
+para("Triwulan berikutnya difokuskan pada promosi akhir tahun dan perluasan jaringan mitra "
+     "di luar Pulau Jawa.", "Standard")
 save(d, "Laporan.docx", "MS Word 2007 XML")
 
 # Lembar kerja
-x = open_tpl("Book.ots"); sh = x.Sheets.getByIndex(0); sh.Name = "Kunjungan"
-rows = [["Poliklinik", "Juli", "Agustus", "September", "Total", "Tren"],
-        ["Anak", 1240, 1385, 1502], ["Penyakit Dalam", 1610, 1702, 1788], ["Bedah", 812, 790, 845],
-        ["Kandungan", 965, 1012, 1080], ["Mata", 540, 588, 612], ["THT", 433, 470, 498], ["Gigi", 702, 731, 760]]
+x = open_tpl("Book.ots"); sh = x.Sheets.getByIndex(0); sh.Name = "Penjualan"
+rows = [["Wilayah", "Juli", "Agustus", "September", "Total", "Tren"],
+        ["DKI Jakarta", 1240, 1385, 1502], ["Jawa Barat", 1610, 1702, 1788], ["Jawa Tengah", 812, 790, 845],
+        ["Jawa Timur", 965, 1012, 1080], ["Bali", 540, 588, 612], ["Sumatra Utara", 433, 470, 498],
+        ["Sulawesi Selatan", 702, 731, 760]]
 for r, row in enumerate(rows):
     for col, v in enumerate(row):
         cell = sh.getCellByPosition(col, r)
@@ -81,17 +81,17 @@ for i in range(1, 6): sh.Columns.getByIndex(i).Width = 2400
 # bagan
 rect = uno.createUnoStruct("com.sun.star.awt.Rectangle"); rect.X, rect.Y, rect.Width, rect.Height = 1000, 6200, 16000, 8000
 addr = sh.getCellRangeByName(f"A1:D{n-1}").RangeAddress
-sh.Charts.addNewByName("Kunjungan", rect, (addr,), True, True)
-x.storeToURL(uno.systemPathToFileUrl(os.path.join(OUT, "Kunjungan.ods")), (pv("FilterName", "calc8"), pv("Overwrite", True)))
-save(x, "Kunjungan.xlsx", "Calc MS Excel 2007 XML")
+sh.Charts.addNewByName("Penjualan", rect, (addr,), True, True)
+x.storeToURL(uno.systemPathToFileUrl(os.path.join(OUT, "Penjualan.ods")), (pv("FilterName", "calc8"), pv("Overwrite", True)))
+save(x, "Penjualan.xlsx", "Calc MS Excel 2007 XML")
 
 # Presentasi
 p = open_tpl("Blank.otp"); page = p.DrawPages.getByIndex(0); page.Layout = 0
 shapes = [page.getByIndex(i) for i in range(page.Count)]
 if shapes:
-    shapes[0].String = "Transformasi Layanan Digital"
+    shapes[0].String = "Rencana Kerja 2027"
 if len(shapes) > 1:
-    shapes[1].String = "Rapat Koordinasi · Oktober 2026"
+    shapes[1].String = "Rapat Tim · Oktober 2026"
 save(p, "Rapat.pptx", "Impress MS PowerPoint 2007 XML")
 desk.terminate(); time.sleep(1); proc.kill(); shutil.rmtree(prof, ignore_errors=True)
 print(sorted(os.listdir(OUT)))

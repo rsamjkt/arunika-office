@@ -3551,9 +3551,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|HomeFontGroup">Font</property>
-                    <style>
-                      <class name="priority-9" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugHomeFont">
                         <property name="visible">True</property>
@@ -3796,6 +3793,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-9" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -3822,9 +3822,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|HomeParagraphGroup">Paragraph</property>
-                    <style>
-                      <class name="priority-7" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugHomeParagraph">
                         <property name="visible">True</property>
@@ -4043,6 +4040,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-7" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4069,9 +4069,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|HomeDrawingGroup">Drawing</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugHomeDrawing">
                         <property name="visible">True</property>
@@ -4263,6 +4260,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4289,9 +4289,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|HomeEditingGroup">Editing</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugHomeEditing">
                         <property name="visible">True</property>
@@ -4428,6 +4425,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4683,9 +4683,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|InsertImagesGroup">Images</property>
-                    <style>
-                      <class name="priority-8" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertImages">
                         <property name="visible">True</property>
@@ -4784,6 +4781,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-8" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4810,9 +4810,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|InsertIllustrationsGroup">Illustrations</property>
-                    <style>
-                      <class name="priority-7" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertIllustrations">
                         <property name="visible">True</property>
@@ -4938,6 +4935,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-7" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4964,9 +4964,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|InsertLinksGroup">Links</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertLinks">
                         <property name="visible">True</property>
@@ -5065,6 +5062,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -5091,9 +5091,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|InsertCommentsGroup">Comments</property>
-                    <style>
-                      <class name="priority-3" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertComments">
                         <property name="visible">True</property>
@@ -5165,6 +5162,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-3" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -5191,9 +5191,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|InsertTextGroup">Text</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertText">
                         <property name="visible">True</property>
@@ -5411,6 +5408,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-6" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -5437,9 +5437,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|InsertSymbolsGroup">Symbols</property>
-                    <style>
-                      <class name="priority-2" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertSymbols">
                         <property name="visible">True</property>
@@ -5538,6 +5535,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-2" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -5564,9 +5564,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|InsertMediaGroup">Media</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertMedia">
                         <property name="visible">True</property>
@@ -5638,6 +5635,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -6196,9 +6196,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|DesignCustomizeGroup">Customize</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugDesignCustomize">
                         <property name="visible">True</property>
@@ -6367,6 +6364,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -6814,9 +6814,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|SlideShowSetUpGroup">Set Up</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugSlideShowSetUp">
                         <property name="visible">True</property>
@@ -6982,6 +6979,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -7169,9 +7169,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|ReviewLanguageGroup">Language</property>
-                    <style>
-                      <class name="priority-3" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReviewLanguage">
                         <property name="visible">True</property>
@@ -7244,6 +7241,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-3" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -7270,9 +7270,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|ReviewReviewCommentsGroup">Comments</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReviewReviewComments">
                         <property name="visible">True</property>
@@ -7463,6 +7460,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -7665,9 +7665,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|ViewMasterViewsGroup">Master Views</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewMasterViews">
                         <property name="visible">True</property>
@@ -7805,6 +7802,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-6" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -7831,9 +7831,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|ViewShowGroup">Show</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewShow">
                         <property name="visible">True</property>
@@ -8037,6 +8034,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -8063,9 +8063,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|ViewZoomGroup">Zoom</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewZoom">
                         <property name="visible">True</property>
@@ -8164,6 +8161,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -8190,9 +8190,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|ViewWindowGroup">Window</property>
-                    <style>
-                      <class name="priority-3" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewWindow">
                         <property name="visible">True</property>
@@ -8264,6 +8261,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-3" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -8290,9 +8290,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaPowerPoint|ViewMacrosGroup">Macros</property>
-                    <style>
-                      <class name="priority-2" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewMacros">
                         <property name="visible">True</property>
@@ -8364,6 +8361,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-2" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>

@@ -314,7 +314,7 @@
             <desc>Specifies whether page breaks are displayed.</desc>
             <label>Page breaks</label>
           </info>
-          <value>true</value>
+          <value>false</value>
         </prop>
         <prop oor:name="Guide" oor:type="xs:boolean" oor:nillable="false">
           <!-- UIHints: Tools - Options -Spreadsheets - Layout - [Section] Lines -->

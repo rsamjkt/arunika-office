@@ -1209,7 +1209,7 @@
             <desc>Specifies whether the horizontal ruler is displayed.</desc>
             <label>Horizontal ruler</label>
           </info>
-          <value>true</value>
+          <value>false</value>
         </prop>
         <prop oor:name="HorizontalRulerUnit" oor:type="xs:int">
           <!-- UIHints: Tools - Options - Text document - View - [Section] View -->

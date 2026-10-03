@@ -3475,9 +3475,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|HomeAlignmentGroup">Alignment</property>
-                    <style>
-                      <class name="priority-8" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugHomeAlignment">
                         <property name="visible">True</property>
@@ -3729,6 +3726,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-8" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -3755,9 +3755,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|HomeNumberGroup">Number</property>
-                    <style>
-                      <class name="priority-7" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugHomeNumber">
                         <property name="visible">True</property>
@@ -3910,6 +3907,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-7" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -3936,9 +3936,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|HomeStylesGroup">Styles</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugHomeStyles">
                         <property name="visible">True</property>
@@ -4066,6 +4063,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4092,9 +4092,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|HomeCellsGroup">Cells</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugHomeCells">
                         <property name="visible">True</property>
@@ -4221,6 +4218,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-6" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4247,9 +4247,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|HomeEditingGroup">Editing</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugHomeEditing">
                         <property name="visible">True</property>
@@ -4441,6 +4438,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4596,9 +4596,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|InsertIllustrationsGroup">Illustrations</property>
-                    <style>
-                      <class name="priority-7" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertIllustrations">
                         <property name="visible">True</property>
@@ -4724,6 +4721,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-7" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4750,9 +4750,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|InsertChartsGroup">Charts</property>
-                    <style>
-                      <class name="priority-8" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertCharts">
                         <property name="visible">True</property>
@@ -4865,6 +4862,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-8" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4891,9 +4891,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|InsertFiltersGroup">Filters</property>
-                    <style>
-                      <class name="priority-3" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertFilters">
                         <property name="visible">True</property>
@@ -4965,6 +4962,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-3" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -4991,9 +4991,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|InsertLinksGroup">Links</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertLinks">
                         <property name="visible">True</property>
@@ -5065,6 +5062,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -5091,9 +5091,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|InsertCommentsGroup">Comments</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertComments">
                         <property name="visible">True</property>
@@ -5165,6 +5162,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -5191,9 +5191,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|InsertTextGroup">Text</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertText">
                         <property name="visible">True</property>
@@ -5384,6 +5381,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-6" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -5410,9 +5410,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|InsertSymbolsGroup">Symbols</property>
-                    <style>
-                      <class name="priority-2" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugInsertSymbols">
                         <property name="visible">True</property>
@@ -5511,6 +5508,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-2" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -6219,9 +6219,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|PageLayoutSheetOptionsGroup">Sheet Options</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugPageLayoutSheetOptions">
                         <property name="visible">True</property>
@@ -6332,6 +6329,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -6358,9 +6358,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|PageLayoutArrangeGroup">Arrange</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugPageLayoutArrange">
                         <property name="visible">True</property>
@@ -6551,6 +6548,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -6946,9 +6946,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|FormulasAuditingGroup">Formula Auditing</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugFormulasAuditing">
                         <property name="visible">True</property>
@@ -7177,6 +7174,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -7203,9 +7203,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|FormulasCalculationGroup">Calculation</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugFormulasCalculation">
                         <property name="visible">True</property>
@@ -7345,6 +7342,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -7534,9 +7534,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|DataQueriesGroup">Queries &amp; Connections</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugDataQueries">
                         <property name="visible">True</property>
@@ -7608,6 +7605,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -7903,9 +7903,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|DataDataToolsGroup">Data Tools</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugDataDataTools">
                         <property name="visible">True</property>
@@ -8070,6 +8067,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-6" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -8096,9 +8096,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|DataForecastGroup">Forecast</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugDataForecast">
                         <property name="visible">True</property>
@@ -8264,6 +8261,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -8290,9 +8290,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|DataOutlineGroup">Outline</property>
-                    <style>
-                      <class name="priority-3" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugDataOutline">
                         <property name="visible">True</property>
@@ -8418,6 +8415,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-3" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -8605,9 +8605,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|ReviewReviewCommentsGroup">Comments</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReviewReviewComments">
                         <property name="visible">True</property>
@@ -8771,6 +8768,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-6" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -8797,9 +8797,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|ReviewProtectGroup">Protect</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReviewProtect">
                         <property name="visible">True</property>
@@ -8898,6 +8895,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -8924,9 +8924,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|ReviewChangesGroup">Changes</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugReviewChanges">
                         <property name="visible">True</property>
@@ -9090,6 +9087,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -9265,9 +9265,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|ViewShowGroup">Show</property>
-                    <style>
-                      <class name="priority-6" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewShow">
                         <property name="visible">True</property>
@@ -9405,6 +9402,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-6" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -9431,9 +9431,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|ViewZoomGroup">Zoom</property>
-                    <style>
-                      <class name="priority-5" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewZoom">
                         <property name="visible">True</property>
@@ -9560,6 +9557,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-5" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -9586,9 +9586,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|ViewWindowGroup">Window</property>
-                    <style>
-                      <class name="priority-4" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewWindow">
                         <property name="visible">True</property>
@@ -9754,6 +9751,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-4" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -9780,9 +9780,6 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes" context="ArunikaExcel|ViewMacrosGroup">Macros</property>
-                    <style>
-                      <class name="priority-3" />
-                    </style>
                     <child>
                       <object class="GtkBox" id="arugViewMacros">
                         <property name="visible">True</property>
@@ -9854,6 +9851,9 @@
                         <property name="position">0</property>
                       </packing>
                     </child>
+                    <style>
+                      <class name="priority-3" />
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>

@@ -15,6 +15,7 @@ $(eval $(call gb_Module_add_targets,extras,\
 	CustomTarget_glade \
 	CustomTarget_gallsystem \
 	CustomTarget_templates \
+	Package_arunika \
 	Package_autocorr \
 	Package_autotext \
 	Package_autotextuser \

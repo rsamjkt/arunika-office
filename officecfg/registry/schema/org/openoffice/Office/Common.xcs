@@ -1733,7 +1733,7 @@
             be saved to an alien format.</desc>
             <label>Open windows</label>
           </info>
-          <value>true</value>
+          <value>false</value>
         </prop>
         <prop oor:name="AlwaysSaveAs" oor:type="xs:boolean" oor:nillable="false">
           <info>
@@ -5072,7 +5072,7 @@
         <info>
           <desc>Determines whether the Tip-of-the-Day dialog is shown on startup.</desc>
         </info>
-        <value>true</value>
+        <value>false</value>
       </prop>
       <prop oor:name="LastTipOfTheDayShown" oor:type="xs:int" oor:nillable="false">
           <info>
@@ -5255,7 +5255,7 @@
           names of the various icon themes ("breeze", "crystal", "elementary",
           etc.).</desc>
         </info>
-        <value>auto</value>
+        <value>colibre</value>
       </prop>
       <prop oor:name="FormControlPilotsEnabled" oor:type="xs:boolean" oor:nillable="false">
         <info>

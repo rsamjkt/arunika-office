@@ -970,6 +970,7 @@ $(eval $(call gb_Helper_register_packages_for_install,ooo,\
 	extras_persona_pink \
 	extras_persona_sand \
 	extras_persona_white \
+	extras_arunika \
 	extras_tplpresnt \
 	extras_tplwizdesktop \
 	$(if $(WITH_TEMPLATES),\

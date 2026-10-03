@@ -125,27 +125,29 @@ void TitleBarUpdate::impl_updateApplicationID(const css::uno::Reference< css::fr
         css::uno::Reference< css::frame::XModuleManager2 > xModuleManager =
             css::frame::ModuleManager::create( m_xContext );
 
+        // Arunika: the application id is the name of our .desktop file, so that docks group
+        // windows with their launcher (arunika-dokumen.desktop, ...)
         OUString sDesktopName;
         OUString aModuleId = xModuleManager->identify(xFrame);
         if ( aModuleId.startsWith("com.sun.star.text.") || aModuleId.startsWith("com.sun.star.xforms.") )
-            sDesktopName = "Writer";
+            sDesktopName = "dokumen";
         else if ( aModuleId.startsWith("com.sun.star.sheet.") )
-            sDesktopName = "Calc";
+            sDesktopName = "lembar-kerja";
         else if ( aModuleId.startsWith("com.sun.star.presentation.") )
-            sDesktopName = "Impress";
+            sDesktopName = "presentasi";
         else if ( aModuleId.startsWith("com.sun.star.drawing." ) )
-            sDesktopName = "Draw";
+            sDesktopName = "gambar";
         else if ( aModuleId.startsWith("com.sun.star.formula." ) )
-            sDesktopName = "Math";
+            sDesktopName = "rumus";
         else if ( aModuleId.startsWith("com.sun.star.sdb.") )
-            sDesktopName = "Base";
+            sDesktopName = "basis-data";
         else
-            sDesktopName = "Startcenter";
+            sDesktopName = "office";
 #if defined(_WIN32)
         // We use a hardcoded product name matching the registry keys so applications can be associated with file types
         sApplicationID = "TheDocumentFoundation.LibreOffice." + sDesktopName;
 #else
-        sApplicationID = utl::ConfigManager::getProductName().toAsciiLowerCase() + "-" + sDesktopName.toAsciiLowerCase();
+        sApplicationID = "arunika-" + sDesktopName;
 #endif
     }
     catch(const css::uno::Exception&)

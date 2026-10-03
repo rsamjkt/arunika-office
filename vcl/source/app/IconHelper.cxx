@@ -17,19 +17,19 @@ OUString IconHelper::GetAppIconName(sal_uInt16 nIcon)
     switch (nIcon)
     {
         case SV_ICON_ID_TEXT:
-            return u"libreoffice-writer"_ustr;
+            return u"arunika-dokumen"_ustr;
         case SV_ICON_ID_SPREADSHEET:
-            return u"libreoffice-calc"_ustr;
+            return u"arunika-lembar-kerja"_ustr;
         case SV_ICON_ID_DRAWING:
-            return u"libreoffice-draw"_ustr;
+            return u"arunika-gambar"_ustr;
         case SV_ICON_ID_PRESENTATION:
-            return u"libreoffice-impress"_ustr;
+            return u"arunika-presentasi"_ustr;
         case SV_ICON_ID_DATABASE:
-            return u"libreoffice-base"_ustr;
+            return u"arunika-basis-data"_ustr;
         case SV_ICON_ID_FORMULA:
-            return u"libreoffice-math"_ustr;
+            return u"arunika-rumus"_ustr;
         default:
-            return u"libreoffice-startcenter"_ustr;
+            return u"arunika-office"_ustr;
     }
 }
 

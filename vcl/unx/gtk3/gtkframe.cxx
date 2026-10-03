@@ -2006,7 +2006,7 @@ void GtkSalFrame::Show( bool bVisible, bool /*bNoActivate*/ )
         if (bAppIdImmutable)
         {
             OString sOrigName(g_get_prgname());
-            g_set_prgname("libreoffice-startcenter");
+            g_set_prgname("arunika-office");
             gtk_widget_set_visible(m_pWindow, true);
             g_set_prgname(sOrigName.getStr());
         }

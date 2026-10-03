@@ -1681,6 +1681,11 @@ VclPtr<vcl::Window> VclBuilder::makeObject(vcl::Window *pParent, const OUString 
             {
                 pToolBox->InsertItem(aCommand, m_xFrame, nBits, extractSizeRequest(rMap));
                 nItemId = pToolBox->GetItemId(aCommand);
+                // Arunika: an explicit label in the .ui overrides the command label, so a ribbon
+                // can use Office-style captions ("Table" instead of "Insert Table...")
+                OUString sLabel(BuilderUtils::convertMnemonicMarkup(extractLabel(rMap)));
+                if (!sLabel.isEmpty())
+                    pToolBox->SetItemText(nItemId, sLabel);
             }
             else
             {

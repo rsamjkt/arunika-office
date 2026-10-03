@@ -145,6 +145,7 @@ $(eval $(call gb_UIConfig_add_uifiles,modules/simpress,\
 	sd/uiconfig/simpress/ui/masterpagepanelrecent \
 	sd/uiconfig/simpress/ui/navigatorpanel \
 	sd/uiconfig/simpress/ui/notebookbar \
+	sd/uiconfig/simpress/ui/notebookbar_arunika \
 	sd/uiconfig/simpress/ui/notebookbar_compact \
 	sd/uiconfig/simpress/ui/notebookbar_single \
 	sd/uiconfig/simpress/ui/notebookbar_groups \

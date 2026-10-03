@@ -167,6 +167,7 @@ $(eval $(call gb_UIConfig_add_uifiles,modules/scalc,\
 	sc/uiconfig/scalc/ui/listmenu \
 	sc/uiconfig/scalc/ui/namerangesdialog \
 	sc/uiconfig/scalc/ui/notebookbar \
+	sc/uiconfig/scalc/ui/notebookbar_arunika \
 	sc/uiconfig/scalc/ui/notebookbar_compact \
 	sc/uiconfig/scalc/ui/notebookbar_groups \
 	sc/uiconfig/scalc/ui/notebookbar_groupedbar_full \

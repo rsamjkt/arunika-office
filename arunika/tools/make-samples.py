@@ -82,6 +82,7 @@ for i in range(1, 6): sh.Columns.getByIndex(i).Width = 2400
 rect = uno.createUnoStruct("com.sun.star.awt.Rectangle"); rect.X, rect.Y, rect.Width, rect.Height = 1000, 6200, 16000, 8000
 addr = sh.getCellRangeByName(f"A1:D{n-1}").RangeAddress
 sh.Charts.addNewByName("Kunjungan", rect, (addr,), True, True)
+x.storeToURL(uno.systemPathToFileUrl(os.path.join(OUT, "Kunjungan.ods")), (pv("FilterName", "calc8"), pv("Overwrite", True)))
 save(x, "Kunjungan.xlsx", "Calc MS Excel 2007 XML")
 
 # Presentasi

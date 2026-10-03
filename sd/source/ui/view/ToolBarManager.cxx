@@ -950,9 +950,11 @@ void ToolBarRules::MainViewShellChanged (ViewShell::ShellType nShellType)
         case ::sd::ViewShell::ST_NOTES:
         case ::sd::ViewShell::ST_HANDOUT:
         case ::sd::ViewShell::ST_DRAW:
-            mpToolBarManager->AddToolBar(
-                ToolBarManager::ToolBarGroup::Permanent,
-                ToolBarManager::msToolBar);
+            // Arunika: no separate drawing toolbar under the ribbon (see SelectionHasChanged)
+            if (!sfx2::SfxNotebookBar::IsActive(true))
+                mpToolBarManager->AddToolBar(
+                    ToolBarManager::ToolBarGroup::Permanent,
+                    ToolBarManager::msToolBar);
             mpToolBarManager->AddToolBar(
                 ToolBarManager::ToolBarGroup::Permanent,
                 ToolBarManager::msOptionsToolBar);

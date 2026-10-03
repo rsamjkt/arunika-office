@@ -1,0 +1,7 @@
+libgtk-3-dev libcups2-dev libfontconfig-dev libfreetype-dev libxrandr-dev libx11-dev libxext-dev libxt-dev
+libxinerama-dev libxrender-dev libsm-dev libice-dev libdbus-1-dev libglib2.0-dev libgl-dev libegl-dev libepoxy-dev
+libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gperf flex bison nasm autoconf automake libtool ccache xsltproc
+libxml2-utils libkrb5-dev libnss3-dev libxml2-dev libxslt1-dev libssl-dev zlib1g-dev libjpeg-dev libpng-dev
+libexpat1-dev libcurl4-openssl-dev libharfbuzz-dev libicu-dev libboost-dev libcairo2-dev libxcb1-dev libx11-xcb-dev
+libxcb-icccm4-dev libxcursor-dev libxi-dev libxss-dev libpango1.0-dev libatk1.0-dev libavahi-client-dev uuid-dev
+libcap-dev libfuse-dev ninja-build meson

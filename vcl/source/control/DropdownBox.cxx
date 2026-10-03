@@ -60,6 +60,18 @@ void DropdownBox::HideContent()
         for (int i = 0; i < GetChildCount(); i++)
             GetChild(i)->Hide();
 
+        // Arunika: like the Office ribbon, a collapsed group is a button with the group name
+        // and a drop-down arrow (the name comes from the tooltip set in the .ui)
+        const OUString aName(GetQuickHelpText());
+        if (!aName.isEmpty() && m_pButton->GetText() != aName)
+        {
+            m_pButton->SetText(aName);
+            m_pButton->SetSymbol(SymbolType::SPIN_DOWN);
+            m_pButton->SetSymbolAlign(SymbolAlign::RIGHT);
+            m_pButton->SetQuickHelpText(aName);
+            m_pButton->set_width_request(-1);
+            m_pButton->SetSizePixel(m_pButton->GetOptimalSize());
+        }
         m_pButton->Show();
         SetOutputSizePixel(Size(m_pButton->GetSizePixel().Width(), GetSizePixel().Height()));
     }

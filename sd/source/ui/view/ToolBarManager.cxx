@@ -34,6 +34,9 @@
 #include <o3tl/enumrange.hxx>
 #include <sfx2/docfile.hxx>
 #include <sfx2/notebookbar/SfxNotebookBar.hxx>
+#include <unotools/confignode.hxx>
+#include <comphelper/processfactory.hxx>
+#include <comphelper/types.hxx>
 #include <sfx2/objsh.hxx>
 #include <sfx2/toolbarids.hxx>
 #include <sfx2/viewfrm.hxx>
@@ -232,6 +235,30 @@ private:
 };
 
 } // end of anonymous namespace
+
+namespace {
+/// Arunika: is a notebookbar (ribbon) mode configured for Impress/Draw? Unlike
+/// SfxNotebookBar::IsActive() this works while the first view frame is still being created.
+bool lcl_IsRibbonActive(bool bDraw)
+{
+    try
+    {
+        const utl::OConfigurationTreeRoot aAppNode(
+            comphelper::getProcessComponentContext(),
+            bDraw ? u"org.openoffice.Office.UI.ToolbarMode/Applications/Draw"_ustr
+                  : u"org.openoffice.Office.UI.ToolbarMode/Applications/Impress"_ustr,
+            false);
+        if (!aAppNode.isValid())
+            return false;
+        const OUString aActive = comphelper::getString(aAppNode.getNodeValue(u"Active"_ustr));
+        return aActive.startsWith("notebookbar");
+    }
+    catch (const css::uno::Exception&)
+    {
+        return false;
+    }
+}
+}
 
 namespace sd {
 
@@ -951,7 +978,7 @@ void ToolBarRules::MainViewShellChanged (ViewShell::ShellType nShellType)
         case ::sd::ViewShell::ST_HANDOUT:
         case ::sd::ViewShell::ST_DRAW:
             // Arunika: no separate drawing toolbar under the ribbon (see SelectionHasChanged)
-            if (!sfx2::SfxNotebookBar::IsActive(true))
+            if (!lcl_IsRibbonActive(nShellType == ::sd::ViewShell::ST_DRAW))
                 mpToolBarManager->AddToolBar(
                     ToolBarManager::ToolBarGroup::Permanent,
                     ToolBarManager::msToolBar);
@@ -1074,7 +1101,7 @@ void ToolBarRules::SelectionHasChanged (
                     case ::sd::ViewShell::ST_HANDOUT:
                         // Arunika: with the ribbon the drawing tools live in its Draw/Home tabs,
                         // like PowerPoint, so the extra drawing toolbars stay hidden
-                        if (sfx2::SfxNotebookBar::IsActive(true))
+                        if (lcl_IsRibbonActive(rViewShell.GetShellType() == ::sd::ViewShell::ST_DRAW))
                             break;
                         mpToolBarManager->SetToolBar(ToolBarManager::ToolBarGroup::Function,
                                                      ToolBarManager::msDrawingObjectToolBar);

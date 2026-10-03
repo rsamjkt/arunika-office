@@ -169,7 +169,8 @@ sub add_lowercase_productname_setupscriptvariable
                 $newline = "\%MASKEDPRODUCTNAME " . $value . "\n";
                 push(@{$variablesref} ,$newline);
                 $value = $original;
-                $value =~ s/\s/\_/g;
+                # Arunika: "Arunika Office" -> "arunikaoffice"; '_' is not allowed in Debian package names
+                $value =~ s/\s//g;
                 $newline = "\%UNIXPRODUCTNAME " . lc($value) . "\n";
                 push(@{$variablesref} ,$newline);
                 $newline = "\%SYSTEMINTUNIXPACKAGENAME " . lc($value) . "\n";
@@ -177,7 +178,7 @@ sub add_lowercase_productname_setupscriptvariable
                 $newline = "\%UNIXPACKAGENAME " . lc($value) . "\n";
                 push(@{$variablesref} ,$newline);
                 $value = $original;
-                $value =~ s/\s/\_/g;
+                $value =~ s/\s//g;
                 $value =~ s/\.//g;
                 $newline = "\%WITHOUTDOTUNIXPRODUCTNAME " . lc($value) . "\n";
                 push(@{$variablesref} ,$newline);

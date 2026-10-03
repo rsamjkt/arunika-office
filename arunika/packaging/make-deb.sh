@@ -23,10 +23,12 @@ trap 'rm -rf "$STAGE"' EXIT
 say() { printf '\033[1;35m»\033[0m %s\n' "$*"; }
 mkdir -p "$OUT"
 
-say "instalasi ke $INST"
-(cd "$CORE" && "$BENV" make cmd cmd="$CORE/solenv/bin/ooinstall --strip $INST") > "$STAGE/install.log" 2>&1 \
-    || { tail -30 "$STAGE/install.log"; exit 1; }
-rm -rf "$INST/sdk" "$INST/readmes" 2>/dev/null || true
+say "instalasi ke $INST (dari instdir, di-strip)"
+# instdir adalah instalasi lengkap yang siap jalan; ooinstall tidak menangani nama produk berspasi
+mkdir -p "$INST"
+cp -a "$CORE/instdir/." "$INST/"
+rm -rf "$INST/sdk" "$INST/readmes" "$INST/program/.lock" 2>/dev/null || true
+find "$INST" -type f \( -name '*.so*' -o -perm -u+x \) -exec sh -c 'head -c4 "$1" | grep -q ELF && strip --strip-unneeded "$1"' _ {} \; 2>/dev/null || true
 
 say "perintah, berkas .desktop, ikon"
 mkdir -p "$ROOTFS/usr/bin"
@@ -71,6 +73,8 @@ mapfile -t ELFS < <(find "$INST/program" -type f \( -name '*.so*' -o -perm -u+x 
 DEPS=$(cd "$STAGE" && dpkg-shlibdeps -O --ignore-missing-info -l"$INST/program" \
         -x"$PKG" "${ELFS[@]}" 2>"$STAGE/shlibdeps.log" | sed -n 's/^shlibs:Depends=//p')
 [ -n "$DEPS" ] || { cat "$STAGE/shlibdeps.log" | tail -20; exit 1; }
+# pustaka UNO dibawa sendiri di program/; jangan bergantung pada paket LibreOffice distro
+DEPS=$(echo "$DEPS" | tr ',' '\n' | sed 's/^ *//' | grep -vE '^(libuno-|uno-libs-private|ure\b|libreoffice)' | paste -sd, | sed 's/,/, /g')
 
 mkdir -p "$ROOTFS/DEBIAN"
 SIZE=$(du -sk "$ROOTFS" | cut -f1)

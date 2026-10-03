@@ -1070,6 +1070,10 @@ void ToolBarRules::SelectionHasChanged (
                     case ::sd::ViewShell::ST_DRAW:
                     case ::sd::ViewShell::ST_NOTES:
                     case ::sd::ViewShell::ST_HANDOUT:
+                        // Arunika: with the ribbon the drawing tools live in its Draw/Home tabs,
+                        // like PowerPoint, so the extra drawing toolbars stay hidden
+                        if (sfx2::SfxNotebookBar::IsActive(true))
+                            break;
                         mpToolBarManager->SetToolBar(ToolBarManager::ToolBarGroup::Function,
                                                      ToolBarManager::msDrawingObjectToolBar);
                         mpToolBarManager->SetToolBar(ToolBarManager::ToolBarGroup::Permanent,
